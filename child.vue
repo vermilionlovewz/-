@@ -1,0 +1,32 @@
+//子组件
+子组件可以通过$emit向父组件传递数据， 
+<template>
+    <div>
+        <h3>
+            这是子组件
+        </h3>
+        <h1>{{message}}</h1>
+        <h2>{{message2}}</h2>
+        <h2>{{message3}}</h2>
+    </div>
+</template>
+<script>
+export default {
+    props:['message','message2'],
+    data(){
+        return{
+            message:'',
+            message2:'',
+            message3:''
+        }
+    },
+    methods:{
+        getmessge(m){
+            this.message3=m
+        },
+        function () {
+            this.$emit('getchilid','子组件通过emit传送数据')
+        }
+    }
+}
+</script>>
